@@ -13,6 +13,7 @@ body, html {
 header {
   /*  NAVBAR  */
   .main-nav > .nav-wrapper {
+
     /*  lOGO  */
     .logo {
       letter-spacing: 3px;
@@ -59,9 +60,10 @@ header {
   }
 }
 
+/* MAIN */
 main {
   overflow-y: auto;
-  height: 90vh;
+  height: 91vh;
   background-color: #F1E9E3;
 
   > h1 {
@@ -69,6 +71,10 @@ main {
     text-transform: uppercase;
     letter-spacing: 3px;
     padding-top: 20px;
+  }
+
+  > h2 {
+    text-align: center;
   }
 
   .flex-container {
@@ -88,7 +94,7 @@ main {
     text-align: center;
     letter-spacing: 1px;
     line-height: 30px;
-    padding: 0 5px;
+    padding: 15px 12px;
   }
 
   /*  FOOTER  */
@@ -97,7 +103,7 @@ main {
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: #000;
+    background-color: #323232;
     text-align: center;
     padding-top: 20px;
     height: 400px;
@@ -120,6 +126,7 @@ main {
     }
   }
 
+  /* GOOGLE MAPS */
   iframe {
     width: 300px;
     height: 300px;
@@ -140,7 +147,7 @@ i.fa-facebook-square, i.fa-instagram {
   -webkit-transition: .5s;
   transition: .5s;
   color: white;
-  background-color: black;
+  background-color: #323232;
 }
 
 .fa-facebook-square:hover {
@@ -153,14 +160,13 @@ i.fa-facebook-square, i.fa-instagram {
   border-radius: 10%;
 }
 
-/*
-  MEDIA QUERY TABLET
-*/
+/*  MEDIA QUERY TABLET */
 @media screen and (min-width: 768px) {
   header {
-    /*  Navbar  */
+    /*  NAVBAR  */
     .main-nav > .nav-wrapper {
-      /*  Logo  */
+
+      /*  LOGO  */
       .logo {
         position: absolute;
         left: 20px;
@@ -177,6 +183,7 @@ i.fa-facebook-square, i.fa-instagram {
     }
   }
 
+ /* MAIN AND GOOGLE MAPS*/
   main {
     iframe {
       height:500px;
@@ -184,16 +191,20 @@ i.fa-facebook-square, i.fa-instagram {
     }
   }
 
+  /* FOOTER */
   footer {
     height: 350px;
   }
 }
 
-/*
-  MEDIA QUERY LAPTOP OR DESKTOP
-*/
+/* MEDIA QUERY LAPTOP OR DESKTOP */
 @media screen and (min-width: 1024px) {
+  /* MAIN */
   main {
+    h2 {
+      padding: 20px;
+    }
+
     .flex-container {
       flex-direction: row;
       border-bottom: 1px solid #CCBDB3;
@@ -204,9 +215,14 @@ i.fa-facebook-square, i.fa-instagram {
       flex-direction: row;
     }
 
+    p > a {
+      color: #000;
+    }
+
     img {
       width: 50%;
       height: 50%;
+      border-radius: 4px;
       margin: 20px;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
@@ -215,13 +231,14 @@ i.fa-facebook-square, i.fa-instagram {
       font-size: 20px;
     }
 
+    /* GOOGLE MAPS */
     iframe {
       width: 500px;
       height: 500px;
     }
   }
 
-  /*  Footer  */
+  /*  FOOTER  */
   footer {
     height: 260px;
 

@@ -1,22 +1,25 @@
 /* MAIN */
 .wrapper {
-  /* The height needs to be set to a fixed value for the effect to work.
-   * 100vh is the full height of the viewport. */
+  /* THE HEIGHT IS SET TO 100vh MINUS THE HEADER */
   height: 85vh;
-  /* The scaling of the images would add a horizontal scrollbar, so disable x overflow. */
+  /* WE DISABLE OVERFLOW-X, SINCE THE SCALING OF THE IMAGES WOULD ADD A HORIZONTAL SCROLLBAR */
   overflow-x: hidden;
-  /* Enable scrolling on the page. */
+  /* THIS ENABLES SCROLL ON PAGE */
   overflow-y: auto;
-  /* Set the perspective to 2px. This is essentailly the simulated distance from the viewport to transformed objects.*/
+  /* THIS IS ESSENTIALLY THE STIMULATED DISTANCE FROM THE VIEWPORT TO TRANSFORMED OBJECTS */
   -webkit-perspective: 3px;
           perspective: 3px;
+}
+
+.video-container video {
+  display: none;
 }
 
 .section {
   position: relative;
   height: 42vh;
   width: 100vw;
-  /* For text formatting. */
+  /* FOR THE TEXT */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -29,22 +32,6 @@
   color: #fff;
   text-shadow: 0 0 5px #000;
 }
-.section a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 20pt;
-  font-weight: 400;
-  font-style: normal;
-  letter-spacing: 3px;
-  line-height: 2em;
-  z-index: 1;
-  text-align: center;
-  border-style: solid;
-  border-width: 1.5px;
-  padding: 10px;
-  border-radius: 1%;
-  position: absolute;
-}
 .section div.speciale {
   text-transform: uppercase;
   font-size: 15px;
@@ -52,24 +39,41 @@
   text-shadow: 0 0 5px #000;
   z-index: 1;
   text-align: center;
-  margin-bottom: 175px;
+}
+.section div.speciale > div {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.section div.speciale > div > a {
+  margin-top: 5px;
+}
+.section a {
+  border: 4px solid #fff;
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
 }
 
 .parallax::after {
-  /* Display and position the pseudo-element */
+  /* HERE IS THE DISPLAY AND POSITION OF PSEUDO-ELEMENT */
   content: " ";
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  /* Force the background image to fill the whole element. */
+  /* FORCED THE BACKGROUND IMAGE TO FILL THE ENTIRE ELEMENT */
   background-size: 100%;
 }
 
-/* The styling for the static div. */
+/* STYLING OF THE STATIC DIV */
 .static {
-  background: #000;
+  background: #323232;
   height: 50vh;
   width: 100%;
 }
@@ -86,7 +90,7 @@
 }
 
 .footer {
-  background-color: #000;
+  background-color: #323232;
   text-align: center;
   font-size: 15px;
   color: #fff;
@@ -94,6 +98,13 @@
   letter-spacing: 3px;
   text-transform: uppercase;
   line-height: 40px;
+}
+.footer .brand {
+  position: relative;
+  top: 0px;
+  left: 10px;
+  width: 100px;
+  height: 100px;
 }
 .footer div {
   padding: 10px 0 10px 0;
@@ -104,7 +115,7 @@
   margin: 0 10px 0 10px;
 }
 
-/* Sets the actual background images. This part is crucial. */
+/* BACKGROUND IMAGES */
 .bg1::after {
   background-image: url("/img/koncept.png");
 }
@@ -121,9 +132,7 @@
   background-image: url("/img/kontakt.png");
 }
 
-/*
-  MEDIA QUERY TABLET
-*/
+/* MEDIA QUERY TABLET */
 @media screen and (min-width: 768px) {
   .wrapper {
     height: 93vh;
@@ -132,12 +141,8 @@
   .section {
     height: 60vh;
   }
-  .section > a {
-    font-size: 30pt;
-  }
   .section div.speciale {
     font-size: 30px;
-    margin-bottom: 370px;
   }
   .section > h1 {
     font-size: 30px;
@@ -146,12 +151,10 @@
   }
 
   .parallax::after {
-    /* Move the pseudo-element back away from the camera,
-     * then scale it back up to fill the viewport.
-     * Because the pseudo-element is further away, it appears to move more slowly, like in real life. */
+    /* THIS MOVES THE PSEUDO-ELEMENT BACK AWAY FROM THE CAMERA, AND THEN SCALE IT BACK UP TO FILL THE VIEWPORT */
     -webkit-transform: translateZ(-1px) scale(1.5);
             transform: translateZ(-1px) scale(1.5);
-    /* Keep the image from overlapping sibling elements. */
+    /* KEEPS THE ELEMENTS FROM OVERLAPPING SIBLING ELEMENTS */
     z-index: -1;
   }
 
@@ -163,7 +166,6 @@
 
   .footer {
     font-size: 25px;
-    line-height: 50px;
     height: 100vh;
     padding-top: 100px;
   }
@@ -176,28 +178,53 @@
     margin: 0 10px 0 10px;
   }
 }
-/*
-  MEDIA QUERY LAPTOP OR DESKTOP
-*/
+/* MEDIA QUERY LAPTOP OR DESKTOP */
 @media screen and (min-width: 1024px) {
   .wrapper {
-    height: 90vh;
+    height: 95vh;
+  }
+
+  .video-container {
+    overflow: hidden;
+    position: relative;
+  }
+  .video-container video {
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
   }
 
   .section {
     height: 100vh;
-  }
-  .section > a {
-    font-size: 40pt;
-  }
-  .section > a:hover {
-    font-size: 45pt;
-    -webkit-transition: 0.6s ease;
-    transition: 0.6s ease;
+    font-size: 35px;
   }
   .section div.speciale {
-    font-size: 35px;
-    margin-bottom: 620px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .section div.speciale > div {
+    margin-top: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .section div.speciale > div > a {
+    margin-top: 75px;
   }
 
   .static > h1 {
