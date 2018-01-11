@@ -1,0 +1,216 @@
+/* MAIN */
+.wrapper {
+  /* The height needs to be set to a fixed value for the effect to work.
+   * 100vh is the full height of the viewport. */
+  height: 85vh;
+  /* The scaling of the images would add a horizontal scrollbar, so disable x overflow. */
+  overflow-x: hidden;
+  /* Enable scrolling on the page. */
+  overflow-y: auto;
+  /* Set the perspective to 2px. This is essentailly the simulated distance from the viewport to transformed objects.*/
+  -webkit-perspective: 3px;
+          perspective: 3px;
+}
+
+.section {
+  position: relative;
+  height: 42vh;
+  width: 100vw;
+  /* For text formatting. */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #fff;
+  text-shadow: 0 0 5px #000;
+}
+.section a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20pt;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 3px;
+  line-height: 2em;
+  z-index: 1;
+  text-align: center;
+  border-style: solid;
+  border-width: 1.5px;
+  padding: 10px;
+  border-radius: 1%;
+  position: absolute;
+}
+.section div.speciale {
+  text-transform: uppercase;
+  font-size: 15px;
+  border: none;
+  text-shadow: 0 0 5px #000;
+  z-index: 1;
+  text-align: center;
+  margin-bottom: 175px;
+}
+
+.parallax::after {
+  /* Display and position the pseudo-element */
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* Force the background image to fill the whole element. */
+  background-size: 100%;
+}
+
+/* The styling for the static div. */
+.static {
+  background: #000;
+  height: 50vh;
+  width: 100%;
+}
+.static > h1 {
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 35px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #fff;
+}
+
+.footer {
+  background-color: #000;
+  text-align: center;
+  font-size: 15px;
+  color: #fff;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  line-height: 40px;
+}
+.footer div {
+  padding: 10px 0 10px 0;
+}
+.footer div > li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 10px 0 10px;
+}
+
+/* Sets the actual background images. This part is crucial. */
+.bg1::after {
+  background-image: url("/img/koncept.png");
+}
+
+.bg2::after {
+  background-image: url("/img/baggastronomiskinnovation.png");
+}
+
+.bg3::after {
+  background-image: url("/img/cases.png");
+}
+
+.bg4::after {
+  background-image: url("/img/kontakt.png");
+}
+
+/*
+  MEDIA QUERY TABLET
+*/
+@media screen and (min-width: 768px) {
+  .wrapper {
+    height: 93vh;
+  }
+
+  .section {
+    height: 60vh;
+  }
+  .section > a {
+    font-size: 30pt;
+  }
+  .section div.speciale {
+    font-size: 30px;
+    margin-bottom: 370px;
+  }
+  .section > h1 {
+    font-size: 30px;
+    letter-spacing: 5px;
+    line-height: 50px;
+  }
+
+  .parallax::after {
+    /* Move the pseudo-element back away from the camera,
+     * then scale it back up to fill the viewport.
+     * Because the pseudo-element is further away, it appears to move more slowly, like in real life. */
+    -webkit-transform: translateZ(-1px) scale(1.5);
+            transform: translateZ(-1px) scale(1.5);
+    /* Keep the image from overlapping sibling elements. */
+    z-index: -1;
+  }
+
+  .bg1::after, .bg2::after, .bg3::after, .bg4::after {
+    background-size: 150%;
+    height: 864px;
+    background-position: center;
+  }
+
+  .footer {
+    font-size: 25px;
+    line-height: 50px;
+    height: 100vh;
+    padding-top: 100px;
+  }
+  .footer div {
+    padding: 10px 0 10px 0;
+  }
+  .footer div > ul {
+    list-style: none;
+    display: inline-block;
+    margin: 0 10px 0 10px;
+  }
+}
+/*
+  MEDIA QUERY LAPTOP OR DESKTOP
+*/
+@media screen and (min-width: 1024px) {
+  .wrapper {
+    height: 90vh;
+  }
+
+  .section {
+    height: 100vh;
+  }
+  .section > a {
+    font-size: 40pt;
+  }
+  .section > a:hover {
+    font-size: 45pt;
+    -webkit-transition: 0.6s ease;
+    transition: 0.6s ease;
+  }
+  .section div.speciale {
+    font-size: 35px;
+    margin-bottom: 620px;
+  }
+
+  .static > h1 {
+    font-size: 40px;
+    letter-spacing: 5px;
+    line-height: 80px;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .bg1::after, .bg2::after, .bg3::after, .bg4::after {
+    background-size: 165%;
+    height: 100vh;
+    background-position: center;
+  }
+}

@@ -1,0 +1,239 @@
+/*  GENERAL  */
+* {
+  box-sizing: border-box;
+  font-family: "Dosis", "Sans Serif";
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+}
+
+header {
+  /*  NAVBAR  */
+  .main-nav > .nav-wrapper {
+    /*  lOGO  */
+    .logo {
+      letter-spacing: 3px;
+      font-weight: bolder;
+      text-align: center;
+      text-decoration: none;
+      color: #000;
+      display: block;
+      margin: 20px;
+    }
+
+    > ul {
+      list-style: none;
+      text-align: center;
+      padding: 0;
+
+      > li {
+        display: inline-block;
+        color: #fff;
+
+        > a {
+          font-size: 13px;
+          font-weight: 400;
+          font-style: normal;
+          letter-spacing: 3px;
+          line-height: 2em;
+          text-decoration: none;
+          margin: 10px;
+          color: #000;
+          -o-transition: .5s;
+          -ms-transition: .5s;
+          -moz-transition: .5s;
+          -webkit-transition: .5s;
+          transition: .5s;
+          padding: 5px;
+
+          &:hover, &.active {
+            background-color: #F1E9E3;
+            border-radius: 2%;
+          }
+        }
+      }
+    }
+  }
+}
+
+main {
+  overflow-y: auto;
+  height: 90vh;
+  background-color: #F1E9E3;
+
+  > h1 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding-top: 20px;
+  }
+
+  .flex-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .direction { flex-direction: column-reverse; }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  p {
+    text-align: center;
+    letter-spacing: 1px;
+    line-height: 30px;
+    padding: 0 5px;
+  }
+
+  /*  FOOTER  */
+  footer {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    text-align: center;
+    padding-top: 20px;
+    height: 400px;
+
+    > p {
+      color: #fff;
+      font-size: 12px;
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: 5px;
+      line-height: 2em;
+      text-decoration: none;
+      padding-top: 10px;
+    }
+
+    > li {
+      list-style: none;
+      display: inline-block;
+      margin: 0 10px 0 10px;
+    }
+  }
+
+  iframe {
+    width: 300px;
+    height: 300px;
+    border-style: none;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+/*  SOCIAL MEDIA ICONS  */
+i.fa-facebook-square, i.fa-instagram {
+  cursor: pointer;
+  padding: 8px 8px;
+  -o-transition: .5s;
+  -ms-transition: .5s;
+  -moz-transition: .5s;
+  -webkit-transition: .5s;
+  transition: .5s;
+  color: white;
+  background-color: black;
+}
+
+.fa-facebook-square:hover {
+    background-color: #3d5b99;
+    border-radius: 10%;
+}
+
+.fa-instagram:hover {
+  background-color: #9b6954;
+  border-radius: 10%;
+}
+
+/*
+  MEDIA QUERY TABLET
+*/
+@media screen and (min-width: 768px) {
+  header {
+    /*  Navbar  */
+    .main-nav > .nav-wrapper {
+      /*  Logo  */
+      .logo {
+        position: absolute;
+        left: 20px;
+        margin-top: 20px;
+      }
+
+      > ul {
+        text-align: right;
+
+        > li {
+          padding-top: 17px;
+        }
+      }
+    }
+  }
+
+  main {
+    iframe {
+      height:500px;
+      width: 700px;
+    }
+  }
+
+  footer {
+    height: 350px;
+  }
+}
+
+/*
+  MEDIA QUERY LAPTOP OR DESKTOP
+*/
+@media screen and (min-width: 1024px) {
+  main {
+    .flex-container {
+      flex-direction: row;
+      border-bottom: 1px solid #CCBDB3;
+    }
+
+    .direction { flex-direction: row; }
+    .row-direction {
+      flex-direction: row;
+    }
+
+    img {
+      width: 50%;
+      height: 50%;
+      margin: 20px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    p {
+      font-size: 20px;
+    }
+
+    iframe {
+      width: 500px;
+      height: 500px;
+    }
+  }
+
+  /*  Footer  */
+  footer {
+    height: 260px;
+
+    > p {
+      color: #fff;
+      font-size: 15px;
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: 5px;
+      line-height: 2em;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+  }
+}
